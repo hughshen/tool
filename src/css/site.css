@@ -1,0 +1,76 @@
+@charset 'utf-8';
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    height: 100%;
+    font-size: 16px;
+}
+
+body {
+    margin: 0;
+    height: 100%;
+    color: #464646;
+    letter-spacing: .5px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+    line-height: 1.4rem;
+    -webkit-tap-highlight-color: transparent;
+}
+
+a {
+    text-decoration: none;
+}
+
+.el-header {
+    padding: 0;
+    background-color: #eef1f6;
+}
+.el-menu, .el-main {
+    margin: 0 auto;
+    padding: 0 1em;
+    border: 0;
+    width: 100%;
+    max-width: 980px;
+    background: transparent;
+}
+.el-main {
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+.el-menu--horizontal .el-menu-item,
+.el-menu--horizontal .el-submenu__title {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.el-menu--horizontal > .el-menu-item.is-active {
+    color: #409eff;
+    border-bottom-width: 0;
+}
+.el-dropdown-menu__item--divided:before,
+.el-menu--horizontal > .el-menu-item:not(.is-disabled):focus,
+.el-menu--horizontal > .el-menu-item:not(.is-disabled):hover,
+.el-menu--horizontal > .el-submenu .el-submenu__title:hover {
+    color: #409eff;
+    background: transparent;
+    border-bottom-width: 5px;
+    border-bottom-color: #409eff !important;
+}
+.el-menu--horizontal .el-menu--popup {
+    padding: 1em;
+    background: #eef1f6;
+}
+.el-menu--horizontal .el-menu--popup > .el-menu-item {
+    background: transparent;
+}
+.el-menu--horizontal .el-menu--popup > .el-menu-item > a {
+    color: #909399;
+}
+.el-menu--horizontal .el-menu--popup > .el-menu-item > a:hover {
+    color: #409eff;
+}
