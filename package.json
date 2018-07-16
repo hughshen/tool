@@ -12,6 +12,8 @@
     "js-beautify": "^1.7.5",
     "jsoneditor": "^5.19.0",
     "md5": "^2.2.1",
+    "qrcode": "^1.2.0",
+    "qrcode-reader": "^1.0.4",
     "randomstring": "^1.1.5",
     "vue": "^2.5.16",
     "vue-router": "^3.0.1"

@@ -6,6 +6,7 @@
                     <el-menu-item index="/">首页</el-menu-item>
                     <el-menu-item index="/front">前端</el-menu-item>
                     <el-menu-item index="/json">JSON</el-menu-item>
+                    <el-menu-item index="/qrcode">二维码</el-menu-item>
                     <el-submenu index="">
                         <template slot="title">其他工具</template>
                         <el-menu-item index="">

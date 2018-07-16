@@ -8,16 +8,18 @@ import App from './App.vue';
 import Index from './views/index.vue';
 import Json from './views/json.vue';
 import Front from './views/front.vue';
+import Qrcode from './views/qrcode.vue';
 
 Vue.use(ElementUI);
 Vue.use(VueRouter);
 
 const router = new VueRouter({
-	mode: 'history',
+    mode: 'history',
     routes: [
         {path: '/', component: Index},
         {path: '/json', component: Json},
         {path: '/front', component: Front},
+        {path: '/qrcode', component: Qrcode},
         {path: '*', redirect: '/'}
     ]
 });
