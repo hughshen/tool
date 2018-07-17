@@ -1,16 +1,12 @@
 <template>
-    <el-form ref="form" :model="form">
-        <el-row style="margin-bottom: 2em;">
-            <el-col :span="24">
-                <el-input type="textarea" id="input-element" @change="jsonParse" v-model="form.input" rows="10" resize="none"></el-input>
-            </el-col>
-        </el-row>
-        <el-row>
-            <el-col :span="24">
-                <div id="jsoneditor-element"></div>
-            </el-col>
-        </el-row>
-    </el-form>
+    <el-row>
+        <el-col :span="24" style="margin-bottom: 2em;">
+            <el-input type="textarea" id="input-element" v-model="input" rows="10" resize="none"></el-input>
+        </el-col>
+        <el-col :span="24">
+            <div id="jsoneditor-element"></div>
+        </el-col>
+    </el-row>
 </template>
 
 <script>
@@ -22,25 +18,24 @@ export default{
     },
     data() {
         return {
-            editor: null,
-            form: {
-                input: ''
-            }
+            input: '',
+            editor: null
         }
+    },
+    watch: {
+        input: 'jsonParse'
     },
     methods: {
         jsonParse() {
             try {
                 var json = {};
 
-                if (this.form.input.trim()) {
-                    json = JSON.parse(this.form.input);
+                if (this.input.trim()) {
+                    json = JSON.parse(this.input);
                 }
 
                 this.editor.set(json);
-            } catch (e) {
-                this.$notify.error({title: '格式错误！', duration: 2000});
-            }
+            } catch (e) {}
         }
     }
 }
