@@ -1,5 +1,5 @@
 <template>
-    <el-form ref="form" :model="form" label-width="100px">
+    <el-form ref="form" :model="form" label-width="120px">
         <el-form-item label="User-Agent">
             <el-input v-model="form.ua"></el-input>
         </el-form-item>
@@ -35,6 +35,15 @@
                 <el-button type="primary" @click="fetchIpInfoDetails" :disabled="!fetchSupported()">详细</el-button>
             </el-col>
         </el-form-item>
+        <el-form-item label="文件转Base64">
+            <el-col :span="24">
+                <el-upload action="" ref="fileToBase64Upload" class="fileToBase64-upload" :on-change="handleFileToBase64UploadChange" :auto-upload="false" :multiple="false" :limit="1">
+                    <el-button slot="trigger" type="primary">选取文件</el-button>
+                    <el-button style="margin-left: 10px;" type="primary" @click="handleFileToBase64ClearFiles">清除文件</el-button>
+                    <el-button style="margin-left: 10px;" type="success" @click="handleFileToBase64">转换文件</el-button>
+                </el-upload>
+            </el-col>
+        </el-form-item>
     </el-form>
 </template>
 
@@ -57,6 +66,7 @@ export default{
                 randomLength: 16,
                 randomString: '',
                 ipAddress: '',
+                fileList: []
             }
         }
     },
@@ -114,6 +124,33 @@ export default{
                     console.log(e);
                     this.$notify.error({title: '获取失败！', duration: 2000});
                 });
+        },
+        handleFileToBase64UploadChange(file, fileList) {
+            this.form.fileList = fileList;
+        },
+        handleFileToBase64ClearFiles() {
+            this.form.fileList = [];
+            this.$refs.fileToBase64Upload.clearFiles();
+        },
+        handleFileToBase64() {
+            if (!this.form.fileList.length) {
+                this.$notify.error({title: '请选择文件！', duration: 2000});
+                return;
+            }
+
+            var file = this.form.fileList[0].raw;
+            var fr = new FileReader()
+            fr.onloadend = () => {
+                var message = `<div class="fileToBase64-result"><textarea rows="12" class="el-textarea__inner" style="resize: none;">${fr.result}</textarea></div>`;
+
+                this.$alert(message, '', {
+                    customClass: 'fileToBase64-MessageBox',
+                    closeOnClickModal: true,
+                    dangerouslyUseHTMLString: true
+                }).catch(e => {});
+
+            }
+            fr.readAsDataURL(file);
         }
     }
 }
@@ -128,5 +165,8 @@ export default{
 }
 .el-form {
     width: 100%;
+}
+.fileToBase64-MessageBox {
+    width: 640px;
 }
 </style>
