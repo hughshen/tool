@@ -22,10 +22,10 @@
                             <a href="https://www.moakt.com/" target="_blank">临时邮箱服务</a>
                         </el-menu-item>
                         <el-menu-item index="">
-                            <a href="https://www.easymp3converter.com/" target="_blank">Easy YouTube to Mp3 Converter</a>
+                            <a href="https://www.y2mate.com/ph9/convert-youtube" target="_blank">Youtube Converter</a>
                         </el-menu-item>
                         <el-menu-item index="">
-                            <a href="https://www.clipconverter.cc/" target="_blank">YouTube to MP4 & MP3 Converter</a>
+                            <a href="https://www.easymp3converter.com/" target="_blank">Easy YouTube to Mp3 Converter</a>
                         </el-menu-item>
                     </el-submenu>
                 </el-menu>
