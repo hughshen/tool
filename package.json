@@ -10,7 +10,7 @@
     "dayjs": "^1.7.4",
     "element-ui": "^2.3.4",
     "js-beautify": "^1.7.5",
-    "jsoneditor": "^5.19.0",
+    "jsoneditor": "^9.5.6",
     "md5": "^2.2.1",
     "qrcode": "^1.2.0",
     "qrcode-reader": "^1.0.4",
