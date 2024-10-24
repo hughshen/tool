@@ -15,7 +15,7 @@
     "qrcode": "^1.2.0",
     "qrcode-reader": "^1.0.4",
     "randomstring": "^1.1.5",
-    "vue": "^2.5.16",
+    "vue": "^3.0.0",
     "vue-router": "^3.0.1"
   },
   "engines": {
